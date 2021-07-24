@@ -1,0 +1,14 @@
+footer {
+  position: fixed;
+  bottom: 0;
+
+  /* And if you want the div to be full-width: */
+  left: 0;
+  right: 0;
+}
+
+.container p{
+    position: relative;
+    left: 50%;
+}
+
