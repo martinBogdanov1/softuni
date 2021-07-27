@@ -1,0 +1,21 @@
+.text-end {
+    position: relative;
+    right: -50%;
+}
+
+header {
+    height: 80px;
+    background-color: hsl(0, 0%, 90%);
+    font-size: 20px;
+    
+}
+
+header a {
+    padding-bottom: 1px;
+}
+
+header li:hover {
+    text-decoration: underline;
+}
+
+

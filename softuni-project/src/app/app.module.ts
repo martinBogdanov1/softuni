@@ -3,18 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
+import { ContentModule } from './content/content.module';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http'
+import { ContentService } from './content/content.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentsModule
+    CoreModule,
+    ContentModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
