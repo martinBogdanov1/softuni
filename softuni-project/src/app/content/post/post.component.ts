@@ -7,7 +7,7 @@ import { ContentService } from '../content.service';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  object = {} || undefined;
+  
   constructor(private contentService: ContentService) {
   }
   ngOnInit(): void {
@@ -15,7 +15,6 @@ export class PostComponent implements OnInit {
   }
 
   fetchContent(): void {
-    this.object = undefined
     this.contentService.getAllContent().subscribe(object => console.log(object));
   }
 
