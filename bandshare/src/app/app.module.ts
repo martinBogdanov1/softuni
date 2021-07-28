@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { ContentModule } from './content/content.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http'
-import { ContentService } from './content/content.service';
+import { ContentService } from './content/services/content/content.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

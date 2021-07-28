@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostComponent } from './post/post.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
 
 
 
 
 @NgModule({
   declarations: [
-    PostComponent,
-    HomeComponent
+    HomeComponent,
+    CatalogComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    PostComponent,
-    HomeComponent
+    HomeComponent,
+    CatalogComponent
   ],
 
 })
