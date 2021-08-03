@@ -1,0 +1,41 @@
+.card {
+    width: 1000px;
+    height: 100%;
+    margin-left: 400px;
+    margin-top: 50px;
+    background-color: rgba(31, 29, 29, 0.7);
+    border-width: 20px;
+    border-color: rgba(138, 131, 131, 0.2);;
+    color: white;
+    font-weight: normal;
+    position: relative;
+    margin-bottom: 300px;
+    
+}
+
+.list-group-item {
+    background: transparent;
+    color: white; 
+    border-width: 2px;
+    border-color: rgba(138, 131, 131, 0.801);;
+}
+
+
+
+.list-group {
+    margin-bottom: 10px;
+}
+
+.btn {
+    color: white;
+}
+
+.card-body.btn-group {
+    width: 100px;
+    height: 100px;
+}
+
+.card-img-top {
+    padding-top: 10px;
+    align-self: center;
+}

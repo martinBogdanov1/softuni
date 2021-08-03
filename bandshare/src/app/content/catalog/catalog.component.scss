@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 70px;
+    min-height: 700px;
+    
+}
+.card {
+    border-width: 2px;
+    border-color: #27282C;
+    background: transparent;
+}
+.card-body {
+    background-color: rgba(31, 29, 29, 0.7);
+    color: white;
+    
+}
+
+.btn {
+    color: white;
+}
+
+.list-group li{
+    background-color: rgba(31, 29, 29, 0.7);
+    border-color: white;
+}
+
+.list-group {
+    margin-bottom: 10px;
+}

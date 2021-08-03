@@ -1,21 +1,37 @@
-.text-end {
-    position: relative;
-    right: -50%;
-}
-
 header {
     height: 80px;
-    background-color: rgb(39, 40, 44);
-    font-size: 20px;
-    
+    font-size: 20px;  
 }
 
-header a {
-    padding-bottom: 1px;
+ul.links-unordered-list li {
+    display: inline-block;
+    margin-right: 10px;
+}
+ul.links-unordered-list li a {
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    text-transform: capitalize;
 }
 
-header li:hover {
-    text-decoration: underline;
+ul.links-unordered-list li a:hover {
+    background: rgba(255, 255, 255, 0.178);
+    padding: 5px 20px;
+    text-decoration: none;
 }
 
+.logo h1 a {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
 
+.bottom-grid,.bottom-grid1{
+    display: flex;
+    justify-content: space-between;
+    margin: 0em 10em;
+}

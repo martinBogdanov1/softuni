@@ -1,14 +1,85 @@
 footer {
 
-  text-align: center;
-  background-color: rgb(39, 40, 44);
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:60px;   /* Height of the footer */
-  padding:10px;
-  padding-bottom:60px;   /* Height of the footer */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  padding-bottom: 60px;
+  // display: inline-block;
+
+}
+
+.copyright p {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  word-spacing: 1px;
+  text-transform: capitalize;
+}
+.bottom-grid,
+.bottom-grid1 {
+  display: flex;
   
+  justify-content: space-between;
+  margin: 0em 10em;
+}
+
+@media screen and (max-width: 1080px) {
+
+  .bottom-grid,
+  .bottom-grid1 {
+    margin: 0em 5em;
+  }
+
+  .icon span.fa {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .bottom-grid,
+  .bottom-grid1 {
+    margin: 0em 2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottom-grid1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright {
+    margin-top: 1em;
+  }
+}
+
+ul.links-unordered-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+ul.links-unordered-list li a {
+  
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 0 5px;
+  text-transform: capitalize;
+}
+ul.links-unordered-list li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+.bottom-grid,.bottom-grid1{
+  display: flex;
+  justify-content: space-between;
+  margin: 0em 10em;
 }
 
 

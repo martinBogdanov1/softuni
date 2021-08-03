@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
-import { CatalogComponent } from './components/catalog/catalog.component';
 
-
-
+import { HomeComponent } from './home/home.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { BandComponent } from './band/band.component';
+import { CreateComponent } from './create/create.component';
+import { ContentRoutingModule } from './content-routing.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CatalogComponent
+    CatalogComponent,
+    BandComponent,
+    CreateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ContentRoutingModule
   ],
-  exports: [
-    HomeComponent,
-    CatalogComponent
-  ],
-
 })
 export class ContentModule { }

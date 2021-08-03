@@ -1,0 +1,23 @@
+<div class="card mb-4 box-shadow">
+    <img class="card-img-top" data-src="" alt="" style="height: 40%; width: 50%; display: block;"
+        src="{{band!.imageUrl}}" data-holder-rendered="true">
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">Name: {{band!.name}}</li>
+            <li class="list-group-item">Genres: {{band!.genres}}</li>
+            <li class="list-group-item">Members: {{band!.members}}</li>
+            <li class="list-group-item">Origin: {{band!.origin}}</li>
+            <li class="list-group-item">Wiki: <a href="{{band!.wikiLink}}">{{band!.wikiLink}}</a></li>
+            <li class="list-group-item">Youtube: <a href="{{band!.youtubeLink}}">{{band!.youtubeLink}}</a></li>
+            <li class="list-group-item">Spotify: <a href="{{band!.spotifyLink}}">{{band!.spotifyLink}}</a></li>
+        </ul>
+        <div>
+            <p style="text-align: center;">Description:</p>
+        </div>
+        <p class="list-group-item">{{band!.description}}</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+        </div>
+    </div>
+</div>
