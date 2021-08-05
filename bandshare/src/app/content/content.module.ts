@@ -6,6 +6,8 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { BandComponent } from './band/band.component';
 import { CreateComponent } from './create/create.component';
 import { ContentRoutingModule } from './content-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ContentService } from './content.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,11 @@ import { ContentRoutingModule } from './content-routing.module';
   ],
   imports: [
     CommonModule,
-    ContentRoutingModule
+    ContentRoutingModule,
+    FormsModule
   ],
+  providers: [
+    ContentService
+  ]
 })
 export class ContentModule { }

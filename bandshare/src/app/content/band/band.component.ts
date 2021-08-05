@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IBand } from 'src/app/shared/interfaces';
 import { ContentService } from '../content.service';
 
@@ -13,13 +13,15 @@ export class BandComponent implements OnInit {
 
   constructor(
     private contentService: ContentService,
-    private activatedRout: ActivatedRoute
-    ) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.band = undefined;
-    const id = this.activatedRout.snapshot.params.bandId;
-    this.contentService.getBandById(id).subscribe(band => this.band = band);
+    const id = this.activatedRoute.snapshot.params.bandId;
+    this.contentService.getBandById(id).subscribe(
+      band => this.band = band,
+      erorr => this.router.navigate(['/404'])
+    );
   }
-
 }

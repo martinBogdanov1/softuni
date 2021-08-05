@@ -1,4 +1,8 @@
-<div class="card mb-4 box-shadow">
+<div *ngIf="!band" class="card mb-4 box-shadow">
+    <p>Loading...</p>
+</div>
+
+<div *ngIf="band" class="card mb-4 box-shadow">
     <img class="card-img-top" data-src="" alt="" style="height: 40%; width: 50%; display: block;"
         src="{{band!.imageUrl}}" data-holder-rendered="true">
     <div class="card-body">

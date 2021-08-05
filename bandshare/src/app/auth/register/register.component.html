@@ -6,23 +6,35 @@
         </div>
         <!---728x90--->
         <div class="content-bottom">
-            <form action="#" method="post">
+            <form [formGroup]="form" action="#" method="post" >
                 <div class="field-group">
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="text1" id="text1" type="text" value="" placeholder="Username" required="">
+                        <input name="emai" type="text" placeholder="Email">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="password" id="myInput" type="Password" placeholder="Password">
+                        <input name="password" type="text" placeholder="Password">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="rePass" id="myInput" type="rePass" placeholder="Repeat Password">
+                        <input name="rePass" type="text" placeholder="Repeat Password">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="firstName" type="text" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="lastName"  type="text" placeholder="Last Name">
                     </div>
                 </div>
                 <div class="wthree-field">
@@ -31,7 +43,7 @@
                 <ul class="list-login">
                 </ul>
                 <div class="list-login-bottom">
-                    <p>Already have an account? Login <a href="/login" class="">here</a></p>
+                    <p>Already have an account? Login <a routerLink="/login">here</a></p>
                     <div class="clearfix"></div>
                 </div>
             </form>

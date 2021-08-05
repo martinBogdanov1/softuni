@@ -246,9 +246,7 @@ body {
 	position: relative;
     min-height: 100vh;
 }
-.layer {
-    padding: 2em 0;
-}
+
 .text-center {
     text-align: center;
 }
@@ -268,9 +266,10 @@ body {
 .icon{
 	margin-bottom:3em;
 }
+
 .content-bottom {
-    padding: 0em 4em;
-    margin: 0 1em;
+    padding: 0em ;
+    margin: 0 ;
 	position: relative; 
     z-index: 1;
     min-height: 500px;
@@ -391,7 +390,7 @@ form .field-group span {
 }
 
 ul.list-login {
-    margin-top: 1.5em;
+    // margin-top: 1.5em;
     margin-bottom: 1em;
 }
 
@@ -412,7 +411,7 @@ form .field-group .wthree-field {
 	font-family: 'Mukta', sans-serif;
     font-size: 16px;
 	width:100%;
-	margin-top:10px;
+	// margin-top:10px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: 0.5s all;
