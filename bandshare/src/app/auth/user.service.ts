@@ -24,11 +24,11 @@ export class UserService {
     );
   }
 
-  // get(data: { email: string, password: string, firstName: string, lastName: string }) {
-  //   return this.http.post<IUser>(`${API_URL}/users`, data, { headers: headers }).pipe(
-  //     tap((user) => this.user = user)
-  //   );
-  // }
+  get(data: { email: string, password: string, firstName: string, lastName: string }) {
+    return this.http.post<IUser>(`${API_URL}/users`, data, { headers: headers }).pipe(
+      tap((user) => this.user = user)
+    );
+  }
 
 }
 

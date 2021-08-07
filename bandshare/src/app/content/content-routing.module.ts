@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BandComponent } from './band/band.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   { 
@@ -21,6 +22,10 @@ const routes: Routes = [
         path: ':bandId',
         component: BandComponent
       },
+      {
+        path: 'edit/:bandId',
+        component: EditComponent
+      }
      
     ]
   },

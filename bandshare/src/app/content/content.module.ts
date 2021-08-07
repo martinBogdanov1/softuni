@@ -8,13 +8,15 @@ import { CreateComponent } from './create/create.component';
 import { ContentRoutingModule } from './content-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ContentService } from './content.service';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CatalogComponent,
     BandComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

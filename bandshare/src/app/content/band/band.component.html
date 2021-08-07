@@ -20,8 +20,8 @@
         </div>
         <p class="list-group-item">{{band!.description}}</p>
         <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+            <button type="button" [routerLink]="['/bands/edit/' + band!.objectId]" class="btn btn-sm btn-outline-secondary">Edit</button>
+            <button type="button" (click)="delete(band!.objectId)" class="btn btn-sm btn-outline-secondary">Delete</button>
         </div>
     </div>
 </div>

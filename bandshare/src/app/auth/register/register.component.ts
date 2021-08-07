@@ -8,9 +8,10 @@ import { UserService } from '../user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnDestroy {
+export class RegisterComponent {
 
   form: FormGroup;
+  object: Object = {};
 
   constructor(
     private fb: FormBuilder,
@@ -23,13 +24,12 @@ export class RegisterComponent implements OnDestroy {
       lastName: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(15)]],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
       // rePass: ['', [Validators.required, ()]]
+
     })
+
+  
   }
-
-
-
-  ngOnDestroy(): void {
-
+  register() {
+   console.log(this.userService.register({ email: 'string', password: 'string', firstName: 'asdsad', lastName: 'asdasd' }).subscribe(o => console.log(o)));
   }
-
 }

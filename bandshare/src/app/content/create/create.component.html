@@ -5,66 +5,69 @@
             <span class="fa fa-html5"></span>
         </div>
         <div class="content-bottom">
-            <form #form="ngForm" action="#" method="post">
-                <div class="field-group">
+            <form #form="ngForm" action="#" method="post" (ngSubmit)="create(form)" class="ng-untouched ng-pristine ng-valid">
+                <div class="field-group" >
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input #nameInput ngModel name="name" type="text" placeholder="Name" required>
+                        <input #nameInput="ngModel"  ngModel name="name" type="text" placeholder="Name" required
+                            minlength="2" maxlength="15">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input #genresInput name="genres" type="text" placeholder="Genre(s)">
+                        <input #genresInput="ngModel" ngModel name="genres" type="text" placeholder="Genre(s)" required
+                        minlength="2" maxlength="40">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
-                        <input name="members" type="text" placeholder="Members">
+                    <div class="wthree-field not-required">
+                        <input name="members" #membersInput="ngModel" ngModel type="text"  placeholder="Members" required
+                        minlength="2" maxlength="50">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
-                        <input name="origin" type="text" placeholder="Origin">
+                    <div class="wthree-field not-required">
+                        <input name="origin" type="text" #originInput="ngModel" ngModel placeholder="Origin" required
+                        minlength="2" maxlength="15">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
-                        <input name="wiki" type="text" placeholder="Wiki">
+                    <div class="wthree-field not-required">
+                        <input name="imageUrl" type="text" #imageInput="ngModel" ngModel placeholder="Image" required
+                        pattern="^(http(s?):).*$">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
-                        <input name="youtube" type="text" placeholder="Youtube">
+                    <div class="wthree-field not-required">
+                        <input name="youtube" type="text" placeholder="Youtube" min="">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
+                    <div class="wthree-field not-required">
                         <input name="spotify" type="text" placeholder="Sporify">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
+                    <div class="wthree-field not-required">
                         <input name="description" type="text" placeholder="Description">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
-                    <div class="wthree-field">
-                        <input name="imageUrl" type="text" placeholder="Image">
+                    <div class="wthree-field not-required">
+                        <input name="wiki" type="text" placeholder="Wiki" >
                     </div>
                 </div>
                 <div class="wthree-field">
-                    <button type="submit" class="btn">Create Band!</button>
+                    <button [disabled]="!form.form.valid" type="submit" class="btn">Create A Band!</button>
                 </div>
-                <ul class="list-login">
-                </ul>
             </form>
         </div>
     </div>

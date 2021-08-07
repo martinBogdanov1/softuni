@@ -24,4 +24,11 @@ export class BandComponent implements OnInit {
       erorr => this.router.navigate(['/404'])
     );
   }
+
+  delete(id: string) {
+    this.contentService.deleteBand(id).subscribe(
+      complete => this.router.navigate(['/bands']),
+      error => this.router.navigate(['/404'])
+    )
+  }
 }

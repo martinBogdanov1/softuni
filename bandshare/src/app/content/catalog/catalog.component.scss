@@ -9,6 +9,7 @@
     border-width: 2px;
     border-color: #27282C;
     background: transparent;
+    min-height: 500px;
 }
 .card-body {
     background-color: rgba(31, 29, 29, 0.7);
@@ -23,6 +24,12 @@
 .list-group li{
     background-color: rgba(31, 29, 29, 0.7);
     border-color: white;
+}
+ 
+.btn-group {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
 }
 
 .list-group {

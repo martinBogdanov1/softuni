@@ -6,7 +6,7 @@
         </div>
         <!---728x90--->
         <div class="content-bottom">
-            <form [formGroup]="form" action="#" method="post" >
+            <form [formGroup]="form" action="#" method="post" (ngSubmit)="register()">
                 <div class="field-group">
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
