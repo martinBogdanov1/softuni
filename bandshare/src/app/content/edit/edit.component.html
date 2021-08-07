@@ -1,0 +1,94 @@
+<div class="layer">
+    <div class="content-w3ls">
+        <div class="text-center icon">
+            <span class="fa fa-html5"></span>
+        </div>
+        <div *ngIf="band" class="content-bottom">
+            <form #form="ngForm" action="#" method="post" (ngSubmit)="edit(band!.objectId, form)" class="ng-untouched ng-pristine ng-valid">
+                <div class="field-group" >
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input ngModel name="name" type="text" 
+                        [(ngModel)]="band!.name" 
+                        required
+                        minlength="2" 
+                        maxlength="15">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input  ngModel name="genres" type="text" 
+                        [(ngModel)]="band!.genres" 
+                        required
+                        minlength="2" 
+                        maxlength="40">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="members"  ngModel type="text" 
+                        [(ngModel)]="band!.members" 
+                        required
+                        minlength="2" 
+                        maxlength="50">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="origin" type="text" ngModel 
+                        [(ngModel)]="band!.origin" 
+                        required
+                        minlength="2" maxlength="15">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="imageUrl" type="text" ngModel 
+                        [(ngModel)]="band!.imageUrl"
+                        required
+                        pattern="^(http(s?):).*$">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="youtube" type="text" 
+                        [value]="band!.youtubeLink ? band!.youtubeLink : null" 
+                        [placeholder]="band!.youtubeLink ? null : 'Youtube'">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="spotify" type="text" 
+                        [value]="band!.spotifyLink ? band!.spotifyLink : null" 
+                        [placeholder]="band!.spotifyLink ? null : 'Spotify'">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="description" type="text"
+                        [value]="band!.description ? band!.description : null" 
+                        [placeholder]="band!.description ? null : 'Description'">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field not-required">
+                        <input name="wiki" type="text"
+                        [value]="band!.wikiLink ? band!.wikiLink : null" 
+                        [placeholder]="band!.wikiLink ? null : 'Wiki'">
+                    </div>
+                </div>
+                <div class="wthree-field">
+                    <button [disabled]="!form.form.valid" type="submit" class="btn">Edit Band</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
