@@ -19,16 +19,24 @@ export class BandComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params.bandId;
-    this.contentService.getBandById(id).subscribe(
-      band => this.band = band,
-      erorr => this.router.navigate(['/404'])
-    );
+    this.contentService.getBandById(id).subscribe({
+      next: (band) => {
+        this.band = band;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
   delete(id: string) {
-    this.contentService.deleteBand(id).subscribe(
-      complete => this.router.navigate(['/bands']),
-      error => this.router.navigate(['/404'])
-    )
+    this.contentService.deleteBand(id).subscribe({
+      next: () => {
+        this.router.navigate(['/bands'])
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 }

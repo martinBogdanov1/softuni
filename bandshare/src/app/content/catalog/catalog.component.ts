@@ -23,15 +23,13 @@ export class CatalogComponent implements OnInit {
   }
 
   delete(band: HTMLDivElement, id: string) {
-    this.contentSerice.deleteBand(id).subscribe(
-      {
-        error: (err) => {
-          return;
-        },
-        complete: () => {
-          band.remove();
-        }
+    this.contentSerice.deleteBand(id).subscribe({
+      next: () => {
+        band.remove;
+      },
+      error: (err) => {
+        return;
       }
-    );
+    });
   }
 }

@@ -20,7 +20,7 @@ export class CreateComponent {
     if (form.invalid) { return; }
     const data = form.value;
     this.contentService.createBand(data).subscribe({
-      next:() => {
+      next: () => {
         this.router.navigate(['/bands']);
       },
       error: (err) => {
