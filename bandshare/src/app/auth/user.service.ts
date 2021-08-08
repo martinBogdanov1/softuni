@@ -10,7 +10,7 @@ const headers = environment.authHeaders;
 
 @Injectable()
 export class UserService {
-  user: IUser | null | undefined = undefined;
+  user: IUser | null | undefined;
 
   get isLogged(): boolean {
     return !!this.user;
@@ -20,22 +20,24 @@ export class UserService {
 
   register(data: { email: string, password: string, firstName: string, lastName: string, username: string }) {
     return this.http.post<IUser>(`${API_URL}/users`, data, { headers: headers }).pipe(
-      tap((user) => console.log(user)
-      )
-    );
-  }
-
-  login(username: string, password: string) {
-    console.log(username);
-    var params = {
-      username,
-      password
-    }
-    
-    return this.http.get<IUser>(`${API_URL}/users`, { headers: headers }).pipe(
       tap((user) => this.user = user)
     );
   }
 
+  login(username: string, password: string) {
+
+    const params = {
+      username,
+      password
+    }
+
+    return this.http.get<IUser>(`${API_URL}/login`, { headers: headers, params: params }).pipe(
+      tap((user) => this.user = user)
+    );
+  }
+
+  logout(): void {
+    this.user = undefined;
+  }
 }
 
