@@ -18,18 +18,26 @@ export class EditComponent {
     private router: Router
   ) {
     const id = this.activatedRoute.snapshot.params.bandId;
-    this.contentService.getBandById(id).subscribe(
-      band => this.band = band,
-      erorr => this.router.navigate(['/404'])
-    );
+    this.contentService.getBandById(id).subscribe({
+      next: (band) => {
+        this.band = band
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
 
   edit(bandId: string, form: NgForm): void {
     const data = form.value;
-    this.contentService.editBand(bandId, data).subscribe(
-      complete => this.router.navigate(['bands/' + bandId])
-    )
+    this.contentService.editBand(bandId, data).subscribe({
+      next: () => {
+        this.router.navigate(['bands/' + bandId])
+      },
+      error: (err) => {
+        return;
+      }
+    });
   }
-
 }
