@@ -7,32 +7,19 @@
         </div>
         <!---728x90--->
         <div class="content-bottom">
-            <form #form="ngForm" action="" method="post">
+            <form [formGroup]="form" action="" method="post" (ngSubmit)="login()">
                 <div class="field-group">
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input #emailInput="ngModel" ngModel name="email" type="text" placeholder="Email" required email>
+                        <input name="email" type="text" placeholder="Email" formControlName="username">
                     </div>
-                </div>
-                <div >
-                    <p>
-                        {{emailInput.errors | json}}
-                    </p>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input #passwordInput="ngModel" ngModel name="password" type="text" placeholder="Password" minlength="4" required>
+                        <input name="password" type="text" placeholder="Password" formControlName="password">
                     </div>
                 </div>
-                <!-- <ng-container *ngIf="passwordInput.touched"> -->
-                    <p class="error" *ngIf="passwordInput.errors?.required">
-                        Please enter a password!
-                    </p>
-                    <p class="error" *ngIf="passwordInput.errors?.minlength">
-                        Please enter a valid password!
-                    </p>
-                <!-- </ng-container> -->
                 <div class="wthree-field">
                     <button type="submit" class="btn">Login</button>
                 </div>

@@ -6,39 +6,74 @@
         </div>
         <!---728x90--->
         <div class="content-bottom">
-            <form [formGroup]="form" action="#" method="post" (ngSubmit)="register()">
+            <form [formGroup]="form" action="#" method="post" (ngSubmit)="register()" class="ng-touched ng-pristine ng-invalid">
                 <div class="field-group">
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="emai" type="text" placeholder="Email">
+                        <input name="emai" type="text" placeholder="Email" 
+                        formControlName="email" 
+                        [required]="!form.get('email')?.errors?.required">
                     </div>
                 </div>
+                <ng-container *ngIf="form.get('email')?.dirty">
+                    <p class="error" *ngIf="form.get('email')?.errors?.pattern">
+                        Please enter a valid email!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="password" type="text" placeholder="Password">
+                        <input name="password" type="text" placeholder="Password" 
+                        formControlName="password" 
+                        [required]="!form.get('password')?.errors?.required">
                     </div>
                 </div>
+                <ng-container *ngIf="form.get('password')?.dirty">
+                    <p class="error" *ngIf="form.get('password')?.errors?.minlength || form.get('password')?.errors?.maxlength">
+                        Password must be between 4-10 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="rePass" type="text" placeholder="Repeat Password">
+                        <input name="rePass" type="text" placeholder="Repeat Password" 
+                        formControlName="rePassword"
+                        [required]="!form.get('rePassword')?.errors?.required">
                     </div>
                 </div>
+                <ng-container *ngIf="form.get('rePassword')?.dirty">
+                    <p class="error" *ngIf="form.get('rePassword')?.errors?.sameValue">
+                        Passwords doesn't match!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="firstName" type="text" placeholder="First Name">
+                        <input name="firstName" type="text" placeholder="First Name" 
+                        formControlName="firstName"
+                        [required]="!form.get('firstName')?.errors?.required">
                     </div>
                 </div>
+                <ng-container *ngIf="form.get('firstName')?.dirty">
+                    <p class="error" *ngIf="form.get('firstName')?.errors?.minlength || form.get('firstName')?.errors?.maxlength">
+                        First name must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="lastName"  type="text" placeholder="Last Name">
+                        <input name="lastName"  type="text" placeholder="Last Name" 
+                        formControlName="lastName"
+                        [required]="!form.get('lastName')?.errors?.required">
                     </div>
                 </div>
+                <ng-container *ngIf="form.get('lastName')?.dirty">
+                    <p class="error" *ngIf="form.get('lastName')?.errors?.minlength || form.get('lastName')?.errors?.maxlength">
+                        Last name must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="wthree-field">
-                    <button type="submit" class="btn">Get Started</button>
+                    <button type="submit" [disabled]="!form.valid" class="btn">Get Started</button>
                 </div>
                 <ul class="list-login">
                 </ul>

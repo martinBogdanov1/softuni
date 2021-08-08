@@ -1,13 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent{
-  
+export class LoginComponent {
+  form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
+    this.form = this.fb.group({
+      username: ['', []],
+      password: ['', []],
+    });
+  }
+
+
+  login(): void {
+    this.userService.login(this.form.value.username, this.form.value.password).subscribe({
+      next: () => {
+        this.router.navigate(['/bands']);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  }
 
 }
