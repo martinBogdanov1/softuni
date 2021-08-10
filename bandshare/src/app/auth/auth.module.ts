@@ -20,7 +20,7 @@ import { UserService } from './user.service';
     ReactiveFormsModule
   ],
   providers: [
-    UserService
+    UserService,
   ]
 
 })
