@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthActivate } from '../shared/guards/auth.activate';
 import { BandComponent } from './band/band.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CreateComponent } from './create/create.component';
@@ -16,15 +17,25 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          redirectUrl: '/login'
+        }
       },
       {
         path: ':bandId',
-        component: BandComponent
+        component: BandComponent,
       },
       {
         path: 'edit/:bandId',
-        component: EditComponent
+        component: EditComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          redirectUrl: '/login'
+        }
       }
      
     ]
