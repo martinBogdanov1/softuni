@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
 .container {
     position: relative;
     padding-top: 50px;
@@ -25,7 +27,15 @@
     background-color: rgba(31, 29, 29, 0.7);
     border-color: white;
 }
- 
+
+.no-results {
+    color: white;
+    margin-top: 300px;
+    margin-left: 350px;
+    font-family: 'Gowun Batang';
+    font-size: 50px;
+}
+
 .btn-group {
     position: absolute;
     bottom: 0;
