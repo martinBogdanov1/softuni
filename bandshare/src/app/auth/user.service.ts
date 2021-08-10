@@ -12,7 +12,7 @@ const headers = environment.authHeaders;
 export class UserService {
   get currentUser(): any {
     try {
-      return JSON.parse(localStorage.getItem('data')!);
+      return JSON.parse(sessionStorage.getItem('data')!);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +37,7 @@ export class UserService {
       tap((data) => {
         try {
           const jsonData = JSON.stringify(data);
-          localStorage.setItem('data', jsonData)
+          sessionStorage.setItem('data', jsonData)
         } catch (err) {
           console.log(err);
         }
@@ -46,7 +46,7 @@ export class UserService {
   }
 
   logout(): void {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 }
 
