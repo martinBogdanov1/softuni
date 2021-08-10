@@ -5,21 +5,33 @@
     </div>
     <div class="links">
       <ul class="links-unordered-list">
-        <li >
+        <ng-container *ngIf="currentUser">
+          <li>
+            {{currentUser.username}}
+          </li>
+        </ng-container>
+        <li>
           <a routerLink="/bands">Bands</a>
         </li>
-        <li >
-          <a routerLink="/myBands">My Bands</a>
-        </li>
-        <li >
-          <a routerLink="/bands/create">Create Band</a>
-        </li>
-        <li c>
-          <a routerLink="/login">Login</a>
-        </li>
-        <li >
-          <a routerLink="/register">Register</a>
-        </li>
+        <ng-container *ngIf="currentUser">
+          <li>
+            <a routerLink="/myBands">My Bands</a>
+          </li>
+          <li>
+            <a routerLink="/bands/create">Create Band</a>
+          </li>
+          <li>
+            <a href="" (click)="logout()">Logout</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="!currentUser">
+          <li>
+            <a routerLink="/login">Login</a>
+          </li>
+          <li>
+            <a routerLink="/register">Register</a>
+          </li>
+        </ng-container>
       </ul>
     </div>
   </div>
