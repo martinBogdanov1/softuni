@@ -18,7 +18,5 @@ export class AuthActivate implements CanActivate {
         }
         
         return this.router.parseUrl(redirectUrl);
-        
     }
-
 }
