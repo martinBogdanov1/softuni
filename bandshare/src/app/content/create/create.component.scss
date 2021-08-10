@@ -389,6 +389,19 @@ form .field-group {
     -o-border-radius: 35px;
 }
 
+.error {
+    background: #fc636b;
+    margin-bottom: 15px;
+    padding: 2px 10px 2px 0;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+    color: white;
+    text-align: center;
+}
+
 
 form .field-group span {
     flex: 1;

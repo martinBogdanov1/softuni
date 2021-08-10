@@ -10,49 +10,89 @@
                     <div class="wthree-field">
                         <input ngModel name="name" type="text" 
                         [(ngModel)]="band!.name" 
+                        #name="ngModel"
                         required
+                        [value]="band!.name ? band!.name : null" 
+                        [placeholder]="band!.name ? null : 'Name'"
                         minlength="2" 
                         maxlength="15">
                     </div>
                 </div>
+                <ng-container *ngIf="name.dirty">
+                    <p class="error" *ngIf="name.errors?.minlength || name.errors?.maxLength">
+                        Name name must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
                         <input  ngModel name="genres" type="text" 
                         [(ngModel)]="band!.genres" 
+                        #genres="ngModel"
+                        [value]="band!.genres ? band!.genres : null" 
+                        [placeholder]="band!.genres ? null : 'Genres'"
                         required
                         minlength="2" 
                         maxlength="40">
                     </div>
                 </div>
+                <ng-container *ngIf="genres.dirty">
+                    <p class="error" *ngIf="genres.errors?.minlength || genres.errors?.maxLength">
+                        Genres name must be between 2-40 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
                         <input name="members"  ngModel type="text" 
                         [(ngModel)]="band!.members" 
+                        #members="ngModel"
+                        [value]="band!.members ? band!.members : null" 
+                        [placeholder]="band!.members ? null : 'Members'"
                         required
                         minlength="2" 
                         maxlength="50">
                     </div>
                 </div>
+                <ng-container *ngIf="members.dirty">
+                    <p class="error" *ngIf="members.errors?.minlength || members.errors?.maxLength">
+                        Members name must be between 2-50 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
                         <input name="origin" type="text" ngModel 
+                        #origin="ngModel"
                         [(ngModel)]="band!.origin" 
+                        [value]="band!.origin ? band!.origin : null" 
+                        [placeholder]="band!.origin ? null : 'Origin'"
                         required
                         minlength="2" maxlength="15">
                     </div>
                 </div>
+                <ng-container *ngIf="origin.dirty">
+                    <p class="error" *ngIf="origin.errors?.minlength || origin.errors?.maxlength">
+                        Origin name must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
                         <input name="imageUrl" type="text" ngModel 
                         [(ngModel)]="band!.imageUrl"
+                        #imageUrl="ngModel"
+                        [value]="band!.imageUrl ? band!.imageUrl : null" 
+                        [placeholder]="band!.imageUrl ? null : 'Image'"
                         required
                         pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="imageUrl.dirty">
+                    <p class="error" *ngIf="imageUrl.errors?.pattern">
+                        Enter a valid Image Url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">

@@ -16,6 +16,11 @@
                         maxlength="15">
                     </div>
                 </div>
+                <ng-container *ngIf="nameInput.dirty">
+                    <p class="error" *ngIf="nameInput.errors?.minlength || nameInput.errors?.maxlength">
+                        Name must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
@@ -27,6 +32,11 @@
                         maxlength="40">
                     </div>
                 </div>
+                <ng-container *ngIf="genresInput.dirty">
+                    <p class="error" *ngIf="genresInput.errors?.minlength || genresInput.errors?.maxlength">
+                        Genres must be between 2-40 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
@@ -34,6 +44,11 @@
                         minlength="2" maxlength="50">
                     </div>
                 </div>
+                <ng-container *ngIf="membersInput.dirty">
+                    <p class="error" *ngIf="membersInput.errors?.minlength || membersInput.errors?.maxlength">
+                        Members must be between 2-50 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
@@ -41,6 +56,11 @@
                         minlength="2" maxlength="15">
                     </div>
                 </div>
+                <ng-container *ngIf="originInput.dirty">
+                    <p class="error" *ngIf="originInput.errors?.minlength || originInput.errors?.maxlength">
+                        Origin must be between 2-15 chars long!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
@@ -51,6 +71,11 @@
                         pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="imageInput.dirty">
+                    <p class="error" *ngIf="imageInput.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">

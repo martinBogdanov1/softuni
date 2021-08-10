@@ -19,9 +19,11 @@
             <p style="text-align: center;">Description:</p>
         </div>
         <p class="list-group-item">{{band!.description}}</p>
+        <ng-container *ngIf="currentUser.objectId === band.ownerId">
         <div class="btn-group">
             <button type="button" [routerLink]="['/bands/edit/' + band!.objectId]" class="btn btn-sm btn-outline-secondary">Edit</button>
             <button type="button" (click)="delete(band!.objectId)" class="btn btn-sm btn-outline-secondary">Delete</button>
         </div>
+    </ng-container>
     </div>
 </div>
