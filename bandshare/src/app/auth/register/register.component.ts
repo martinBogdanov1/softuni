@@ -40,7 +40,7 @@ export class RegisterComponent implements OnDestroy {
 
     this.userService.register(form.value).subscribe({
       error: (err) => {
-        if (err.status == 200) {
+        if (err.error.code == 202) {
           this.err = 'There is an existing account associated with this email already!'
         } else {
           this.router.navigate(['/error']);

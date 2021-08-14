@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './content/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
