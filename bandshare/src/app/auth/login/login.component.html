@@ -1,10 +1,8 @@
 <div class="layer">
-    <!---728x90--->
     <div class="content-w3ls">
         <div class="text-center icon">
             <span class="fa fa-html5"></span>
         </div>
-        <!---728x90--->
         <div class="content-bottom">
             <form [formGroup]="form" action="" method="post" (ngSubmit)="login()">
                 <div class="field-group">
@@ -16,20 +14,22 @@
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="password" type="text" placeholder="Password" formControlName="password">
+                        <input name="password" type="password" placeholder="Password" formControlName="password">
                     </div>
                 </div>
+                <p *ngIf="err" class="error">
+                    {{err}}
+                </p>
                 <div class="wthree-field">
                     <button type="submit" [disabled]="!form.valid" class="btn">Login</button>
                 </div>
                 <ul class="list-login">
                 </ul>
                 <div class="list-login-bottom">
-                    <p>Don't have an account? Register <a routerLink="/register">here</a></p>
+                    <p>Don't have an account? Register <a routerLink="/user/register">here</a></p>
                     <div class="clearfix"></div>
                 </div>
             </form>
         </div>
     </div>
-    <!---728x90--->
 </div>

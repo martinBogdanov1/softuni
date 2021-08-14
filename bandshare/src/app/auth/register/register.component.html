@@ -1,10 +1,8 @@
 <div class="layer">
-    <!---728x90--->
     <div class="content-w3ls">
         <div class="text-center icon">
             <span class="fa fa-html5"></span>
         </div>
-        <!---728x90--->
         <div class="content-bottom">
             <form [formGroup]="form" action="#" method="post" (ngSubmit)="register()" class="ng-touched ng-pristine ng-invalid">
                 <div class="field-group">
@@ -23,7 +21,7 @@
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="password" type="text" placeholder="Password" 
+                        <input name="password" type="password" placeholder="Password" 
                         formControlName="password" 
                         [required]="!form.get('password')?.errors?.required">
                     </div>
@@ -36,7 +34,7 @@
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="rePass" type="text" placeholder="Repeat Password" 
+                        <input name="rePass" type="password" placeholder="Repeat Password" 
                         formControlName="rePassword"
                         [required]="!form.get('rePassword')?.errors?.required">
                     </div>
@@ -78,11 +76,10 @@
                 <ul class="list-login">
                 </ul>
                 <div class="list-login-bottom">
-                    <p>Already have an account? Login <a routerLink="/login">here</a></p>
+                    <p>Already have an account? Login <a routerLink="/user/login">here</a></p>
                     <div class="clearfix"></div>
                 </div>
             </form>
         </div>
     </div>
-    <!---728x90--->
 </div>

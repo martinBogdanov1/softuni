@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+.container {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 70px;
+    min-height: 785px;
+    
+}
+.card {
+    border-width: 2px;
+    border-color: #27282C;
+    background: transparent;
+    min-height: 500px;
+}
+.card-body {
+    background-color: rgba(31, 29, 29, 0.7);
+    color: white;
+    
+}
+
+.btn {
+    color: white;
+}
+
+.list-group li{
+    background-color: rgba(31, 29, 29, 0.7);
+    border-color: white;
+}
+
+.no-results {
+    color: white;
+    margin-top: 300px;
+    margin-left: 350px;
+    font-family: 'Gowun Batang';
+    font-size: 50px;
+}
+
+.btn-group {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+}
+
+.list-group {
+    margin-bottom: 10px;
+}

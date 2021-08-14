@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { sameValueAsFactory } from 'src/app/shared/validators';
-import { UserService } from '../user.service';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +13,7 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnDestroy {
 
   form: FormGroup;
+  err: String | undefined;
   killSubscription = new Subject();
 
   constructor(
@@ -30,13 +31,20 @@ export class RegisterComponent implements OnDestroy {
         this.killSubscription)]]
     });
   }
+  
   register(): void {
     let form = this.form;
     if (form.invalid) { return; }
     form.value.username = form.value.email;
-    this.userService.register(form.value).pipe().subscribe({
+    delete form.value.rePassword;
+
+    this.userService.register(form.value).subscribe({
       error: (err) => {
-        console.log(err);
+        if (err.status == 200) {
+          this.err = 'There is an existing account associated with this email already!'
+        } else {
+          this.router.navigate(['/error']);
+        }
       },
       complete: () => {
         this.userService.login(form.value.username, form.value.password).subscribe({

@@ -1,7 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent {
   form: FormGroup;
+  err: String | undefined;
 
   constructor(
     private fb: FormBuilder,
@@ -29,7 +31,11 @@ export class LoginComponent {
         this.router.navigate(['/bands']);
       },
       error: (err) => {
-        console.log(err);
+        if (err.error.code === 101) {
+          this.err = 'Invalid email or password!'
+        } else {
+          this.router.navigate(['/error']);
+        }
       }
     })
   }

@@ -1,0 +1,36 @@
+<div class="container">
+    <ng-container>
+        <div class="no-results" *ngIf="!bands" style="color: white;">Loading...</div>
+    </ng-container>
+    <ng-container *ngIf="bands && !bands.results.length">
+        <div class="no-results">No Bands Found!</div>
+    </ng-container>
+    <ng-container *ngIf="bands && bands.results.length">
+        <div class="row">
+            <div *ngFor="let item of bands!.results" #band class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]"
+                        style="height: 225px; width: 100%; display: block;" src="{{item.imageUrl}}"
+                        data-holder-rendered="true">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Name: {{item.name}}</li>
+                            <li class="list-group-item">Genres: {{item.genres}}</li>
+                            <li class="list-group-item">Members: {{item.members}}</li>
+                        </ul>
+                        <div class="">
+                            <div class="btn-group">
+                                <button type="button" [routerLink]="['/bands', item.objectId]"
+                                    class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" [routerLink]="['/bands/edit', item.objectId]"
+                                    class="btn btn-sm btn-outline-secondary">Edit</button>
+                                <button type="button" (click)="delete(band, item.objectId)"
+                                    class="btn btn-sm btn-outline-secondary">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
