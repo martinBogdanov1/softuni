@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthActivate } from './guards/auth.activate';
-
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
-    NotFoundComponent
+    NotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,
-  ],
-  providers: [AuthActivate]
+  ]
 })
 export class SharedModule { }
