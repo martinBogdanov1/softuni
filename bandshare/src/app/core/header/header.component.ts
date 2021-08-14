@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/auth/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { IUser } from 'src/app/shared/interfaces/user';
 
 @Component({
@@ -12,7 +12,7 @@ export class HeaderComponent {
   user: IUser | undefined;
 
   get currentUser() {
-    return this.userService.currentUser;
+    return this.userService.loggedUser;
   }
 
   constructor(

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/auth/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { IBand } from 'src/app/shared/interfaces';
-import { ContentService } from '../content.service';
+import { ContentService } from '../../core/services/content.service';
 
 @Component({
   selector: 'app-band',
@@ -13,7 +13,7 @@ export class BandComponent implements OnInit {
   band: IBand | undefined;
 
   get currentUser() {
-    return this.userService.currentUser;
+    return this.userService.loggedUser;
   }
 
   constructor(
@@ -25,6 +25,7 @@ export class BandComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params.bandId;
+
     this.contentService.getBandById(id).subscribe({
       next: (band) => {
         this.band = band;

@@ -79,27 +79,47 @@
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="youtube" type="text" placeholder="Youtube">
+                        <input name="youtubeLink" type="text" placeholder="Youtube" #youtubeLink="ngModel"
+                        ngModel pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="youtubeLink.dirty">
+                    <p class="error" *ngIf="youtubeLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="spotify" type="text" placeholder="Sporify">
+                        <input name="spotifyLink" type="text" placeholder="Sporify" #spotifyLink="ngModel"
+                        ngModel pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="spotifyLink.dirty">
+                    <p class="error" *ngIf="spotifyLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="description" type="text" placeholder="Description">
+                        <input name="description" type="text" placeholder="Description" #description="ngModel"
+                        ngModel>
                     </div>
                 </div>
+                
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="wiki" type="text" placeholder="Wiki" >
+                        <input name="wikiLink" type="text" placeholder="Wiki" #wikiLink="ngModel"
+                        ngModel pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="wikiLink.dirty">
+                    <p class="error" *ngIf="wikiLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="wthree-field">
                     <button [disabled]="!form.form.valid" type="submit" class="btn">Create A Band!</button>
                 </div>

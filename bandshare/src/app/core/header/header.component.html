@@ -15,7 +15,7 @@
         </li>
         <ng-container *ngIf="currentUser">
           <li>
-            <a routerLink="/myBands">My Bands</a>
+            <a routerLink="user/mybands">My Bands</a>
           </li>
           <li>
             <a routerLink="/bands/create">Create Band</a>
@@ -26,10 +26,10 @@
         </ng-container>
         <ng-container *ngIf="!currentUser">
           <li>
-            <a routerLink="/login">Login</a>
+            <a routerLink="user/login">Login</a>
           </li>
           <li>
-            <a routerLink="/register">Register</a>
+            <a routerLink="user/register">Register</a>
           </li>
         </ng-container>
       </ul>

@@ -10,20 +10,27 @@
             <li class="list-group-item">Name: {{band!.name}}</li>
             <li class="list-group-item">Genres: {{band!.genres}}</li>
             <li class="list-group-item">Members: {{band!.members}}</li>
-            <li class="list-group-item">Origin: {{band!.origin}}</li>
-            <li class="list-group-item">Wiki: <a href="{{band!.wikiLink}}">{{band!.wikiLink}}</a></li>
-            <li class="list-group-item">Youtube: <a href="{{band!.youtubeLink}}">{{band!.youtubeLink}}</a></li>
-            <li class="list-group-item">Spotify: <a href="{{band!.spotifyLink}}">{{band!.spotifyLink}}</a></li>
+            <li *ngIf="band!.origin" class="list-group-item">Origin: {{band!.origin}}</li>
+            <li *ngIf="band!.wikiLink" class="list-group-item">Wiki: <a href="{{band!.wikiLink}}">{{band!.wikiLink}}</a>
+            </li>
+            <li *ngIf="band!.youtubeLink" class="list-group-item">Youtube: <a
+                    href="{{band!.youtubeLink}}">{{band!.youtubeLink}}</a></li>
+            <li *ngIf="band!.spotifyLink" class="list-group-item">Spotify: <a
+                    href="{{band!.spotifyLink}}">{{band!.spotifyLink}}</a></li>
         </ul>
-        <div>
-            <p style="text-align: center;">Description:</p>
-        </div>
-        <p class="list-group-item">{{band!.description}}</p>
-        <ng-container *ngIf="currentUser.objectId === band.ownerId">
-        <div class="btn-group">
-            <button type="button" [routerLink]="['/bands/edit/' + band!.objectId]" class="btn btn-sm btn-outline-secondary">Edit</button>
-            <button type="button" (click)="delete(band!.objectId)" class="btn btn-sm btn-outline-secondary">Delete</button>
-        </div>
-    </ng-container>
+        <ng-container *ngIf="band!.description">
+            <div>
+                <p style="text-align: center;">Description:</p>
+            </div>
+            <p class="list-group-item">{{band!.description}}</p>
+        </ng-container>
+        <ng-container *ngIf="currentUser && currentUser.objectId === band.ownerId">
+            <div class="btn-group">
+                <button type="button" [routerLink]="['/bands/edit/' + band!.objectId]"
+                    class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button type="button" (click)="delete(band!.objectId)"
+                    class="btn btn-sm btn-outline-secondary">Delete</button>
+            </div>
+        </ng-container>
     </div>
 </div>

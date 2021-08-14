@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { BandComponent } from './band/band.component';
 import { CreateComponent } from './create/create.component';
 import { ContentRoutingModule } from './content-routing.module';
 import { FormsModule } from '@angular/forms';
-import { ContentService } from './content.service';
 import { EditComponent } from './edit/edit.component';
 
 @NgModule({
@@ -16,15 +14,14 @@ import { EditComponent } from './edit/edit.component';
     CatalogComponent,
     BandComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    
+    
   ],
   imports: [
     CommonModule,
     ContentRoutingModule,
     FormsModule
-  ],
-  providers: [
-    ContentService
   ]
 })
 export class ContentModule { }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs/operators';
 import { IBands } from 'src/app/shared/interfaces';
-import { ContentService } from '../content.service';
-import { UserService } from 'src/app/auth/user.service';
+import { ContentService } from '../../core/services/content.service';
+import { UserService } from 'src/app/core/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -13,12 +13,13 @@ export class CatalogComponent {
   bands: IBands | undefined;
 
   get currentUser() {
-    return this.userServce.currentUser;
+    return this.userServce.loggedUser;
   }
 
-  constructor(
+  constructor (
     private contentSerice: ContentService,
-    private userServce: UserService
+    private userServce: UserService,
+    private router: Router
   ) {
     this.getBands();
   }
@@ -36,7 +37,8 @@ export class CatalogComponent {
         this.getBands();
       },
       error: (err) => {
-        return;
+        console.log(err);
+        this.router.navigate(['/error']);
       }
     });
   }

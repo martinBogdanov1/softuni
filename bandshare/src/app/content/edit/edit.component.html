@@ -90,29 +90,45 @@
                 </div>
                 <ng-container *ngIf="imageUrl.dirty">
                     <p class="error" *ngIf="imageUrl.errors?.pattern">
-                        Enter a valid Image Url!
+                        Enter a valid url!
                     </p>
                 </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
-                        <input name="youtube" type="text" 
+                        <input name="youtubeLink" type="text" ngModel
+                        [(ngModel)]="band!.youtubeLink"
+                        #youtubeLink="ngModel"
                         [value]="band!.youtubeLink ? band!.youtubeLink : null" 
-                        [placeholder]="band!.youtubeLink ? null : 'Youtube'">
+                        [placeholder]="band!.youtubeLink ? null : 'Youtube'" pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="youtubeLink.dirty">
+                    <p class="error" *ngIf="youtubeLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
-                        <input name="spotify" type="text" 
+                        <input name="spotifyLink" type="text" ngModel
+                        #spotifyLink="ngModel"
+                        [(ngModel)]="band!.spotifyLink"
                         [value]="band!.spotifyLink ? band!.spotifyLink : null" 
-                        [placeholder]="band!.spotifyLink ? null : 'Spotify'">
+                        [placeholder]="band!.spotifyLink ? null : 'Spotify'" pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="spotifyLink.dirty">
+                    <p class="error" *ngIf="spotifyLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
-                        <input name="description" type="text"
+                        <input name="description" type="text" ngModel
+                        #description="ngModel"
+                        [(ngModel)]="band!.description"
                         [value]="band!.description ? band!.description : null" 
                         [placeholder]="band!.description ? null : 'Description'">
                     </div>
@@ -120,11 +136,18 @@
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field not-required">
-                        <input name="wiki" type="text"
+                        <input name="wikiLink" type="text" ngModel
+                        #wikiLink="ngModel"
+                        [(ngModel)]="band!.wikiLink"
                         [value]="band!.wikiLink ? band!.wikiLink : null" 
-                        [placeholder]="band!.wikiLink ? null : 'Wiki'">
+                        [placeholder]="band!.wikiLink ? null : 'Wiki'" pattern="^(http(s?):).*$">
                     </div>
                 </div>
+                <ng-container *ngIf="wikiLink.dirty">
+                    <p class="error" *ngIf="wikiLink.errors?.pattern">
+                        Enter a valid url!
+                    </p>
+                </ng-container>
                 <div class="wthree-field">
                     <button [disabled]="!form.form.valid" type="submit" class="btn">Edit Band</button>
                 </div>

@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/auth/user.service';
-import { ContentService } from '../content.service';
+import { UserService } from 'src/app/core/services/user.service';
+import { ContentService } from '../../core/services/content.service';
 
 @Component({
   selector: 'app-create',
@@ -11,8 +11,9 @@ import { ContentService } from '../content.service';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent {
+
   get currentUser() {
-    return this.userService.currentUser;
+    return this.userService.loggedUser;
   }
 
   constructor(
@@ -31,9 +32,9 @@ export class CreateComponent {
         this.router.navigate(['/bands']);
       },
       error: (err) => {
-        this.router.navigate(['/404']);
+        console.log(err);
+        this.router.navigate(['/error']);
       }
     });
   }
-
 }
