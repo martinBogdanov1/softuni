@@ -15,8 +15,6 @@ import { EditComponent } from './edit/edit.component';
     BandComponent,
     CreateComponent,
     EditComponent,
-    
-    
   ],
   imports: [
     CommonModule,
